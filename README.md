@@ -84,4 +84,14 @@ Follow the below steps:
         }
     }
     
+6). Test
+
+    GET       http://localhost:52732/api/Employee
+    Headers   Accept-Language:en-IN
+    
+    Output:   Name in en-IN
+    
+Done.
+    
+
 Done.
