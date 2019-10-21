@@ -12,7 +12,7 @@ Follow the below steps:
     using System.Globalization;
     using Microsoft.AspNetCore.Localization;
 
-    // code
+    // new code
     var supportedCultures = new List<CultureInfo>
     {
         new CultureInfo("en-IN"),
@@ -57,7 +57,19 @@ Follow the below steps:
         }
     }
 
-5). Add the below controller
+5). Modify the below method to add the code lines
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        // add the two code lines
+        services.AddLocalization(config => { config.ResourcesPath = "Resources"; });
+        services.AddTransient<IEmployeeResource, EmployeeResource>();
+        
+        // existing
+        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+    }
+
+6). Add the below controller
 
     using System.Collections.Generic;
     using Microsoft.AspNetCore.Mvc;
@@ -84,14 +96,12 @@ Follow the below steps:
         }
     }
     
-6). Test
+7). Test
 
     GET       http://localhost:52732/api/Employee
     Headers   Accept-Language:en-IN
     
     Output:   Name in en-IN
-    
-Done.
-    
+        
 
 Done.
