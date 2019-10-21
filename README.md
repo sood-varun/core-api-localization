@@ -57,7 +57,7 @@ Follow the below steps:
         }
     }
 
-5). Modify the below method to add the code lines
+5). Modify the below method in Startup.cs to add the code lines
 
     public void ConfigureServices(IServiceCollection services)
     {
@@ -96,7 +96,7 @@ Follow the below steps:
         }
     }
     
-7). Test
+7). Test in Postman
 
     GET       http://localhost:52732/api/Employee
     Headers   Accept-Language:en-IN
